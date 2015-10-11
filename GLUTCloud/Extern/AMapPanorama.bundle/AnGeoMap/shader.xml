@@ -1,0 +1,59 @@
+<Xml>
+	<ShaderProgram>
+		<VertexShader>
+			<Uniform>
+				<unif name="g_WorldViewProjectionMatrix" type="mat4" count="1"/>
+				<unif name="g_texcoordTransform" type="float4" count="1"/>
+			</Uniform>
+			<Attribute>
+				<attrib name="position" semantic="position" index="0"/>
+	      <attrib name="texcoord" semantic="texcoord" index="0"/>
+      </Attribute>
+      <Code>
+        <![CDATA[
+          uniform mat4 g_WorldViewProjectionMatrix;
+          uniform vec4 g_texcoordTransform;
+					attribute vec3 position;
+					attribute vec2 texcoord;
+
+			  	varying vec2 outTexcoord;
+
+					void main()
+					{
+						vec4 pos1 = g_WorldViewProjectionMatrix * vec4(position, 1.0);
+						gl_Position = vec4(pos1.x,pos1.y,0,1.0);
+						outTexcoord.x = texcoord.x;
+        		outTexcoord.y = texcoord.y;
+        		outTexcoord.x  = texcoord.x * g_texcoordTransform.x + g_texcoordTransform.z;
+	          outTexcoord.y  = texcoord.y * g_texcoordTransform.y + g_texcoordTransform.w;
+					}
+        ]]>
+      </Code>
+		</VertexShader>
+		<PixelShader>
+    	<Uniform>
+		  	<unif name="g_param" type="float4" count="1"/>
+      </Uniform>
+      <Texture>
+        <tex name="diffuseSampler" index="0"/>
+	    </Texture>
+      <Code>
+		  	<![CDATA[
+					precision mediump float;
+
+					uniform vec4 g_param;
+					uniform sampler2D diffuseSampler;
+
+					varying vec2 outTexcoord;
+
+					void main()
+					{
+						vec4 texColor = texture2D(diffuseSampler, vec2(outTexcoord.x,outTexcoord.y) );
+						gl_FragColor = texColor;
+						gl_FragColor.a *= g_param.a;
+					}
+		  	]]>
+        </Code>
+      </PixelShader>
+    </ShaderProgram>
+  </Xml>

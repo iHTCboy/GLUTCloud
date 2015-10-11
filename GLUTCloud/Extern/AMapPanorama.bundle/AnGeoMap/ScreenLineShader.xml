@@ -1,0 +1,65 @@
+<Xml>
+	<ShaderProgram>
+		<VertexShader>
+			<Uniform>
+				<unif name="g_WorldViewProjectionMatrix" type="mat4" count="1"/>
+			</Uniform>
+			<Attribute>
+				<attrib name="position" semantic="position" index="0"/>
+	      <attrib name="texcoord" semantic="texcoord" index="0"/>
+	      <attrib name="normal" semantic="normal" index="0"/>
+      </Attribute>
+      <Code>
+        <![CDATA[
+        
+          uniform mat4 g_WorldViewProjectionMatrix;
+    
+					attribute vec3 position;
+					attribute vec2 texcoord;
+					attribute vec4 normal;
+               
+          varying vec4 outColor;
+          varying vec2 outTexcoord;
+								  	
+					void main()
+					{
+					gl_Position = g_WorldViewProjectionMatrix * vec4(position, 1.0);
+          gl_Position.z = -0.01;
+					//gl_FrontColor = vec4(1,0,0,0.5);
+					outColor = vec4(normal.x,normal.y,normal.z,normal.w);
+					outTexcoord.x = texcoord.x;
+        	outTexcoord.y = texcoord.y;
+					}
+        ]]>
+      </Code>
+		</VertexShader>
+		<PixelShader>
+    	<Uniform>
+		  	<unif name="g_LineColor" type="float4" count="1"/>
+      </Uniform>
+      <Texture>
+        <tex name="diffuseSampler" index="0"/>
+	    </Texture>
+      <Code>
+		  	<![CDATA[
+					precision mediump float;
+
+					uniform vec4 g_LineColor;
+					uniform sampler2D diffuseSampler;
+
+					varying vec2 outTexcoord;
+          varying vec4 outColor;
+
+					void main()
+					{
+             //gl_FragColor = outColor;
+					   //gl_FragColor.a *= g_LineColor.a;
+					   vec4 texColor = texture2D(diffuseSampler, vec2(outTexcoord.x,outTexcoord.y) );
+					   //gl_FragColor = vec4(g_LineColor.r * texColor.r+texColor.g, g_LineColor.g * texColor.r+texColor.g, g_LineColor.b * texColor.r+texColor.g, g_LineColor.a)*texColor.b;
+					   gl_FragColor = vec4(texColor.r,texColor.g,texColor.b,g_LineColor.a)*texColor.a;
+					}
+		  	]]>
+        </Code>
+      </PixelShader>
+    </ShaderProgram>
+  </Xml>

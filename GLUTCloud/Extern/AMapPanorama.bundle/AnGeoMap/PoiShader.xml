@@ -1,0 +1,81 @@
+<Xml>
+	<ShaderProgram>
+		<VertexShader>
+			<Uniform>
+				<unif name="g_WorldViewProjectionMatrix" type="mat4" count="1"/>
+				<unif name="g_texcoordTransform" type="float4" count="1"/>
+			</Uniform>
+			<Attribute>
+				<attrib name="position" semantic="position" index="0"/>
+	            <attrib name="texcoord" semantic="texcoord" index="0"/>
+				<attrib name="color" semantic="normal" index="0"/>
+				<attrib name="secondarycolor" semantic="normal" index="0"/>
+				<attrib name="fillcolor" semantic="normal" index="0"/>
+            </Attribute>
+      <Code>
+        <![CDATA[
+          uniform mat4 g_WorldViewProjectionMatrix;
+          uniform vec4 g_texcoordTransform;
+					attribute vec3 position;
+					attribute vec2 texcoord;
+					attribute vec4 color;
+					attribute vec4 secondarycolor;
+					attribute vec4 fillcolor;
+					
+					varying vec4 outColor;
+					varying vec4 outSecondarycolor;
+					varying vec4 outFillcolor;
+			  	varying vec2 outTexcoord;
+
+					void main()
+					{
+						gl_Position = g_WorldViewProjectionMatrix * vec4(position, 1.0);
+            gl_Position.z = 1.0;
+						outColor = color;
+						outSecondarycolor = secondarycolor;
+						outFillcolor = fillcolor;
+						outTexcoord.x = texcoord.x + g_texcoordTransform.x;
+        		outTexcoord.y = texcoord.y + g_texcoordTransform.y;
+					}
+        ]]>
+      </Code>
+		</VertexShader>
+		
+		<PixelShader>
+			<Uniform>
+        <unif name="g_blendColor" type="float4" count="1"/>
+      </Uniform>
+      <Texture>
+        <tex name="diffuseSampler" index="0"/>
+      </Texture>
+			<Code>
+				<![CDATA[
+					precision mediump float;
+					uniform sampler2D diffuseSampler;
+          uniform vec4  g_blendColor;
+
+					varying vec4 outColor;
+					varying vec4 outSecondarycolor;
+					varying vec4 outFillcolor;
+					varying vec2 outTexcoord;
+
+					void main()
+					{
+						vec4 texColor = texture2D(diffuseSampler, vec2(outTexcoord.x,outTexcoord.y) );
+      			gl_FragColor.rgb = 	outColor.rgb*g_blendColor.g + outSecondarycolor.rgb*g_blendColor.r;	
+      		  gl_FragColor.a = texColor.a*outColor.a*g_blendColor.g + texColor.a*outSecondarycolor.a*g_blendColor.r;
+      		  gl_FragColor.a = gl_FragColor.a*g_blendColor.a;
+					  
+					 
+					  
+					  
+					  gl_FragColor.rgba = outFillcolor.rgba*(1.0-gl_FragColor.a) + gl_FragColor.rgba*gl_FragColor.a;
+					
+					  
+					  
+					}
+				]]>
+			</Code>
+      </PixelShader>
+    </ShaderProgram>
+  </Xml>

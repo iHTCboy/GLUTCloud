@@ -1,0 +1,87 @@
+﻿<Xml>
+  <ShaderProgram>
+    <VertexShader>
+      <Uniform>
+        <unif name="g_WorldViewProjectionMatrix" type="mat4" count="1"/>
+        <unif name="g_TexUVWrapping" type="float2" count="1"/>
+      </Uniform>
+      <Attribute>
+        <attrib name="position" semantic="position" index="0"/>
+        <attrib name="texcoord" semantic="texcoord" index="0"/>
+      </Attribute>
+      <Code>
+        <![CDATA[
+          		uniform mat4 g_WorldViewProjectionMatrix;
+          	  uniform vec2 g_TexUVWrapping;
+			        attribute vec3 position;
+			        attribute vec2 texcoord;
+	  		      varying vec2 outTexcoord;
+			        void main()
+			        {
+				        gl_Position = g_WorldViewProjectionMatrix * vec4(position, 1.0);
+				        outTexcoord = texcoord * g_TexUVWrapping;
+			        }
+        ]]>
+      </Code>
+    </VertexShader>
+    <PixelShader>
+      <Uniform>
+        <unif name="g_param" type="float4" count="1"/>
+        <unif name="g_PixelSize" type="float2" count="1"/>
+      </Uniform>
+      <Texture>
+        <tex name="diffuseSampler" index="0"/>
+      </Texture>
+      <Code>
+        <![CDATA[
+					precision mediump float;
+
+					uniform vec4 g_param;
+					uniform vec2 g_PixelSize;  // 如果纹理大小为800*600, 则为(1.0/800.0, 1.0/600.0)  
+					uniform sampler2D diffuseSampler;					
+					varying vec2 outTexcoord;
+					
+					const float       Gaussian_a = 0.5; // 高斯函数的参数a  
+					const float       Gaussian_c = 2.0; // 高斯函数的参数c  
+					const float       RANGE = 3.0;      // 模糊范围，比如3*3，则RANGE为3  
+					const float 	  e = 2.71828183;
+					
+					//标准高斯函数，令a或c为参数，可以简化  
+float Gaussian(float x)   
+{  
+    return Gaussian_a * pow(e, -x*x/(Gaussian_c*Gaussian_c) );  
+} 
+
+					void main()
+					{
+    vec3 cOut = vec3(0.0, 0.0, 0.0);      
+    
+    float gaussTotal = 0.0;  
+    float x,y;  
+    float temp;  
+  
+    vec4 OutColor = texture2D(diffuseSampler, outTexcoord);
+    for (y=-RANGE; y<=RANGE; y+=1.0)  
+    {  
+        for (x=-RANGE; x<=RANGE; x+=1.0)  
+        {  
+            // 这一行是在GPU中进行计算，而在实际的程序中如果a,c,RANGE的值已经确定，  
+            // 可以在CPU中预先计算处所要的权重值，直接代入即可  
+            temp = Gaussian( sqrt( x*x + y*y ) );  
+            gaussTotal += temp;
+            cOut += temp * vec3( texture2D(diffuseSampler, outTexcoord + vec2(x,y) * g_PixelSize) );  
+        }  
+    }  
+  
+    cOut /= gaussTotal;  
+      
+    //调试用：不模糊，输出原图像  
+    //cOut = vec3(texture2D(uSourcImg, gl_TexCoord[0].st));  
+      
+    gl_FragColor = vec4(cOut, OutColor.a);
+					}
+		  	]]>
+      </Code>
+    </PixelShader>
+  </ShaderProgram>
+</Xml>

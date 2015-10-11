@@ -1,0 +1,50 @@
+<Xml>
+	<ShaderProgram>
+		<VertexShader>
+			<Uniform>
+				<unif name="g_WorldViewProjectionMatrix" type="mat4" count="1"/>
+			</Uniform>
+			<Attribute>
+				<attrib name="position" semantic="position" index="0"/>
+            </Attribute>
+            <Code>
+                <![CDATA[
+                    uniform mat4 g_WorldViewProjectionMatrix;
+					attribute vec3 position;
+					
+					void main()
+					{
+						gl_Position = g_WorldViewProjectionMatrix * vec4(position, 1.0);
+					}
+                ]]>
+             </Code>
+		</VertexShader>
+		
+		<PixelShader>
+    	     <Uniform>
+		  	    <unif name="g_param" type="float4" count="1"/>
+             </Uniform>
+            
+             <Code>
+		  	    <![CDATA[
+					precision mediump float;
+
+					uniform vec4 g_param;
+					//uniform sampler2D diffuseSampler;
+
+					//varying vec2 outTexcoord;
+
+					void main()
+					{
+						//vec4 texColor = texture2D(diffuseSampler, vec2(outTexcoord.x,outTexcoord.y) );
+                        //gl_FragColor = texColor * g_param.a;
+                        gl_FragColor = g_param;
+                        //gl_FragColor = vec4(1.0,1.0,1.0,1.0);
+					}
+		  	    ]]>
+            </Code>
+         </PixelShader>
+		 
+		 
+    </ShaderProgram>
+  </Xml>

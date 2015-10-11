@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MapConfig>
+	 <!-- shader项，记录系统所有用到的shader，在初始化时填充到shaderManager中 -->
+  <shader>
+  	 <!-- name:shader在manager中的key值，path:存放路径，如果为控则与config同路径 -->
+    <program name="IconShader"          path="" />
+    <program name="ImageBoxShader"      path="" />
+    <program name="PauseShader"         path="" />
+    <program name="PoiShader"           path="" />
+    <program name="PolygonShader"       path="" />
+    <program name="ScreenLineShader"    path="" />
+    <program name="shader"              path="" />
+    <program name="shader_alpha_blend"  path="" />
+    <program name="TexLineShader"       path="" />
+    <program name="TextShader"          path="" />
+  </shader>
+   <!--系统全局设置-->
+  <System>
+  	 <!--enable:是开启否旋转缩放融合效果，mousemove:在旋转缩放融合过程中是否允许鼠标移动，如果允许则移动后融合效果消失
+        mintime:最小过渡时间，maxtime:最大过渡时间，loadaffect:加载进度是否影响过渡时间-->
+    <blend  enable="true" loadaffect="true" mousemove="true" mintime="2000" maxtime="5000" color="0xffffffff"/>
+
+    <!--加载父块，stride:加载时跨越的级数，0为不加载父块-->
+    <loadparent       stride="3" />
+     <!--跳级渲染，stride:跳跃的级数，0为不跳级-->
+    <jumplevelrender  stride="0" />
+     <!--连续缩放，enable:开启，maxstride:一次连续的操作最大跳转级数-->
+    <seriatescale     enable="true" maxstride="1" />
+     <!--连续旋转，enable:开启，maxstride:一次连续的操作最大旋转角度-->
+    <seriaterotate    enable="true" maxstride="45" />
+    <!--缓存配置，enable:是否开启缓存，path:缓存路径，为空则与congfig同路径，size:缓存大小-->
+    <cache  enable="true" path=""  size="200" />
+     <!--内显存控制，inner:内存大小，graphics:显存大小-->
+    <memory  inner=""  graphics="200"  />
+    <!--下载线程控制，number:下载线程数量-->
+    <loadthread number="4" />
+    <visible minlevel="1" maxlevel="20"/>
+  </System>
+</MapConfig>
