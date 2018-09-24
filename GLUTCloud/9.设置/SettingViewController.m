@@ -13,6 +13,8 @@
 #import "MBProgressHUD+MJ.h"
 #import "TCAppViewController.h"
 #import "TCHelpViewController.h"
+#import <StoreKit/StoreKit.h>
+#import <SafariServices/SafariServices.h>
 
 @interface SettingViewController ()<UITableViewDataSource, UITableViewDelegate,MFMessageComposeViewControllerDelegate,MFMailComposeViewControllerDelegate,UIActionSheetDelegate,UIAlertViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -51,10 +53,12 @@
         switch (indexPath.row)
         {
             case 0   : title = @"使用帮助";            break;
-            case 1   : title = @"给我评分";            break;
-            case 2   : title = @"意见反馈";            break;
+            case 1   : title = @"意见反馈";            break;
+            case 2   : title = @"作者博客";            break;
             case 3   : title = @"推荐应用";            break;
             case 4   : title = @"关于应用";            break;
+            case 5   : title = @"应用内评分";          break;
+            case 6   : title = @"AppStore评分";       break;
             default  :  break;
         }
     }
@@ -86,7 +90,7 @@
     }
     else
     {
-        section = 5;
+        section = 7;
     }
     
     return section;
@@ -175,7 +179,7 @@
 {
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     
-    if ([cell.textLabel.text isEqualToString:@"给我评分"])
+    if ([cell.textLabel.text isEqualToString:@"AppStore评分"])
     {
         [self openAppStoreWithID:@"954359041"];
        
@@ -210,6 +214,20 @@
         [self.navigationController pushViewController:apps animated:YES];
         
     }
+    else if([cell.textLabel.text isEqualToString:@"应用内评分"])
+    {
+        if (@available(iOS 10.3, *)) {
+            [SKStoreReviewController requestReview];
+        }else{
+            [self openAppStoreWithID:@"954359041"];
+        }
+    }
+    else if([cell.textLabel.text isEqualToString:@"作者博客"])
+    {
+        [self inSafariOpenWithURL:@"https://www.iHTCboy.com"];
+        
+    }
+    
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -219,11 +237,27 @@
 {
     //评分 无法使用
     //NSString *str = [NSString stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",ID];
-    NSString *str = [NSString stringWithFormat: @"https://itunes.apple.com/cn/app/gui-lin-li-gong-da-xue-yun/id%@?mt=8", ID];
+    NSString *str = [NSString stringWithFormat: @"https://itunes.apple.com/cn/app/gui-lin-li-gong-da-xue-yun/id%@?mt=8&action=write-review", ID];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
     
 }
 
+/**
+ *  从Safari打开
+ */
+- (void)inSafariOpenWithURL:(NSString *)url
+{
+    if (@available(iOS 9.0, *)) {
+        SFSafariViewController * sf = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
+        if (@available(iOS 11.0, *)) {
+            sf.preferredBarTintColor = [UIColor colorWithRed:(66)/255.0 green:(156)/255.0 blue:(249)/255.0 alpha:1];
+            sf.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleClose;
+        }
+        [[[[UIApplication sharedApplication] keyWindow] rootViewController] presentViewController:sf animated:YES completion:nil];
+    }else{
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
+}
 
 
 #pragma mark - 意见反馈

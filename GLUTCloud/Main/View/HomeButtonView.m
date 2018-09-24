@@ -10,13 +10,13 @@
 #import "TCButton.h"
 
 #define margin 0
-#define navBarHight 63
+#define navBarHight (iPhone_X_S ? 87 : 63)
+#define iPhone_X_S ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone && ([UIScreen mainScreen].bounds.size.height == 812.0 || [UIScreen mainScreen].bounds.size.height == 896.0))
 
 @implementation HomeButtonView
 
 - (void)addButtonWithTitle:(NSString *)title imageName:(NSString *)imgName
 {
-    
     // 创建按钮
     TCButton *button = [TCButton buttonWithType:UIButtonTypeCustom];
     
@@ -48,7 +48,7 @@
     
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     CGFloat height = [UIScreen mainScreen].bounds.size.height - 140;
-    self.frame = CGRectMake(0,navBarHight, width, height);
+    self.frame = CGRectMake(0, navBarHight, width, height);
     CGFloat butoonW = (width - 4 * margin) /3;
     CGFloat butoonH = butoonW + margin;
     int totalColumns = 3;

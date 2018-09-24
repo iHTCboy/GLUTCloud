@@ -169,92 +169,92 @@
      广西壮族自治区桂林市雁山区雁山街道鹿鸣会馆, addressComponent: {province: 广西壮族自治区, city: 桂林市, district: 雁山区, township: 雁山街道, neighborhood: , building: , citycode: 0773, adcode: 450311, streetNumber: {street: 雁山街, number: 366, location: {25.058813, 110.308350}, distance: 501, direction: 东}}, roads: [], roadinters: [], pois: []}
      */
     
-    UILabel * provinceName = [self createTitleLabel:@"省(自治区)：" withFontOfSize:18.0 withextAlignment:NSTextAlignmentRight];
+    UILabel * provinceName = [self createTitleLabel:@"省(自治区)：" withFontOfSize:16.0 withextAlignment:NSTextAlignmentRight];
     provinceName.frame = CGRectMake(margin, 0, LabelWidth, LabelHight);
     [self.view addSubview:provinceName];
     
-    UILabel * provinceNameLabel = [self createTitleLabel:@"省(自治区市)" withFontOfSize:20.0 withextAlignment:NSTextAlignmentLeft];
+    UILabel * provinceNameLabel = [self createTitleLabel:@"省(自治区市)" withFontOfSize:18.0 withextAlignment:NSTextAlignmentLeft];
     provinceNameLabel.frame = CGRectMake(LabelWidth + margin, 0, viewWidth - LabelWidth - margin, LabelHight);
     [self.view addSubview:provinceNameLabel];
     self.provinceNameLabel = provinceNameLabel;
     
     
     
-    UILabel * cityName = [self createTitleLabel:@"所在城市：" withFontOfSize:18.0 withextAlignment:NSTextAlignmentRight];
+    UILabel * cityName = [self createTitleLabel:@"所在城市：" withFontOfSize:16.0 withextAlignment:NSTextAlignmentRight];
     cityName.frame = CGRectMake(margin, LabelHight + margin  , LabelWidth, LabelHight);
     [self.view addSubview:cityName];
     
-    UILabel * cityNameLabel = [self createTitleLabel:@"城市" withFontOfSize:20.0 withextAlignment:NSTextAlignmentLeft];
+    UILabel * cityNameLabel = [self createTitleLabel:@"城市" withFontOfSize:18.0 withextAlignment:NSTextAlignmentLeft];
     cityNameLabel.frame = CGRectMake(LabelWidth + margin, LabelHight + margin  , viewWidth - LabelWidth - margin, LabelHight);
     [self.view addSubview:cityNameLabel];
     self.cityNameLabel = cityNameLabel;
     
  
 
-    UILabel * districtName = [self createTitleLabel:@"所在区(县)：" withFontOfSize:18.0 withextAlignment:NSTextAlignmentRight];
+    UILabel * districtName = [self createTitleLabel:@"所在区(县)：" withFontOfSize:16.0 withextAlignment:NSTextAlignmentRight];
     districtName.frame = CGRectMake(margin, LabelHight * 2 + margin * 2 , LabelWidth, LabelHight);
     [self.view addSubview:districtName];
     
-    UILabel * districtNameLabel = [self createTitleLabel:@"所在区(县)" withFontOfSize:20.0 withextAlignment:NSTextAlignmentLeft];
+    UILabel * districtNameLabel = [self createTitleLabel:@"所在区(县)" withFontOfSize:18.0 withextAlignment:NSTextAlignmentLeft];
     districtNameLabel.frame = CGRectMake(LabelWidth + margin, LabelHight * 2 + margin * 2 , viewWidth - LabelWidth - margin, LabelHight);
     [self.view addSubview:districtNameLabel];
     self.districtNameLabel = districtNameLabel;
     
     
-    UILabel * townshipName = [self createTitleLabel:@"所在乡镇：" withFontOfSize:18.0 withextAlignment:NSTextAlignmentRight];    townshipName.frame = CGRectMake(margin, LabelHight * 3 + margin * 3 , LabelWidth, LabelHight);
+    UILabel * townshipName = [self createTitleLabel:@"所在乡镇：" withFontOfSize:16.0 withextAlignment:NSTextAlignmentRight];    townshipName.frame = CGRectMake(margin, LabelHight * 3 + margin * 3 , LabelWidth, LabelHight);
     [self.view addSubview:townshipName];
     
-    UILabel * townshipNameLabel = [self createTitleLabel:@"所在乡镇" withFontOfSize:20.0 withextAlignment:NSTextAlignmentLeft];
+    UILabel * townshipNameLabel = [self createTitleLabel:@"所在乡镇" withFontOfSize:18.0 withextAlignment:NSTextAlignmentLeft];
     townshipNameLabel.frame = CGRectMake(LabelWidth + margin, LabelHight * 3 + margin * 3 , viewWidth - LabelWidth - margin, LabelHight);
     [self.view addSubview:townshipNameLabel];
     self.townshipNameLabel = townshipNameLabel;
     
     
-    UILabel * streetAndNumber = [self createTitleLabel:@"街道号：" withFontOfSize:18.0 withextAlignment:NSTextAlignmentRight];
+    UILabel * streetAndNumber = [self createTitleLabel:@"街道号：" withFontOfSize:16.0 withextAlignment:NSTextAlignmentRight];
     streetAndNumber.frame = CGRectMake(margin, LabelHight * 4 + margin * 4 , LabelWidth, LabelHight);
     [self.view addSubview:streetAndNumber];
     
-    UILabel * streetAndNumberLabel = [self createTitleLabel:@"街道号" withFontOfSize:20.0 withextAlignment:NSTextAlignmentLeft];
+    UILabel * streetAndNumberLabel = [self createTitleLabel:@"街道号" withFontOfSize:18.0 withextAlignment:NSTextAlignmentLeft];
     streetAndNumberLabel.frame = CGRectMake(LabelWidth + margin, LabelHight * 4 + margin * 4 , viewWidth - LabelWidth - margin, LabelHight);
     [self.view addSubview:streetAndNumberLabel];
     self.streetAndNumberLabel = streetAndNumberLabel;
     
     
     
-    UILabel * locationName = [self createTitleLabel:@"经纬度：" withFontOfSize:18.0 withextAlignment:NSTextAlignmentRight];
+    UILabel * locationName = [self createTitleLabel:@"经纬度：" withFontOfSize:16.0 withextAlignment:NSTextAlignmentRight];
     locationName.frame = CGRectMake(margin, LabelHight * 5 + margin * 5 , LabelWidth, LabelHight);
     [self.view addSubview:locationName];
     
-    UILabel * locationNameLabel = [self createTitleLabel:@"经纬度" withFontOfSize:20.0 withextAlignment:NSTextAlignmentLeft];
+    UILabel * locationNameLabel = [self createTitleLabel:@"经纬度" withFontOfSize:18.0 withextAlignment:NSTextAlignmentLeft];
     locationNameLabel.frame = CGRectMake(LabelWidth + margin, LabelHight * 5 + margin * 5 , viewWidth - LabelWidth - margin, LabelHight);
     [self.view addSubview:locationNameLabel];
     self.locationNameLabel = locationNameLabel;
     
 
     
-    UILabel * citycodeName = [self createTitleLabel:@"城市代码：" withFontOfSize:18.0 withextAlignment:NSTextAlignmentRight];
+    UILabel * citycodeName = [self createTitleLabel:@"城市代码：" withFontOfSize:16.0 withextAlignment:NSTextAlignmentRight];
     citycodeName.frame = CGRectMake(margin, LabelHight * 6 + margin * 6 , LabelWidth, LabelHight);
     [self.view addSubview:citycodeName];
     
-    UILabel * citycodeNameLabel = [self createTitleLabel:@"城市代码" withFontOfSize:20.0 withextAlignment:NSTextAlignmentLeft];
+    UILabel * citycodeNameLabel = [self createTitleLabel:@"城市代码" withFontOfSize:18.0 withextAlignment:NSTextAlignmentLeft];
     citycodeNameLabel.frame = CGRectMake(LabelWidth + margin, LabelHight * 6 + margin * 6 , viewWidth - LabelWidth - margin, LabelHight);
     [self.view addSubview:citycodeNameLabel];
     self.citycodeNameLabel = citycodeNameLabel;
     
     
     
-    UILabel * adcodeName = [self createTitleLabel:@"行政代码：" withFontOfSize:18.0 withextAlignment:NSTextAlignmentRight];
+    UILabel * adcodeName = [self createTitleLabel:@"行政代码：" withFontOfSize:16.0 withextAlignment:NSTextAlignmentRight];
     adcodeName.frame = CGRectMake(margin, LabelHight * 7 + margin * 7 , LabelWidth, LabelHight);
     [self.view addSubview:adcodeName];
     
-    UILabel * adcodeNameLabel = [self createTitleLabel:@"行政代码" withFontOfSize:20.0 withextAlignment:NSTextAlignmentLeft];
+    UILabel * adcodeNameLabel = [self createTitleLabel:@"行政代码" withFontOfSize:18.0 withextAlignment:NSTextAlignmentLeft];
     adcodeNameLabel.frame = CGRectMake(LabelWidth + margin, LabelHight * 7 + margin * 7 , viewWidth - LabelWidth - margin, LabelHight);
     [self.view addSubview:adcodeNameLabel];
     self.adcodeNameLabel = adcodeNameLabel;
 
     
     
-    UILabel * detailedAddressName = [self createTitleLabel:@"详细地址：" withFontOfSize:18.0 withextAlignment:NSTextAlignmentRight];
+    UILabel * detailedAddressName = [self createTitleLabel:@"详细地址：" withFontOfSize:16.0 withextAlignment:NSTextAlignmentRight];
     detailedAddressName.frame = CGRectMake(margin, LabelHight * 8 + margin * 8 , LabelWidth, LabelHight);
     [self.view addSubview:detailedAddressName];
     

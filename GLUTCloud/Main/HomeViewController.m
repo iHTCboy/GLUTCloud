@@ -109,15 +109,14 @@
     
     if (tag == 0) {
 
-    
-    BaseMapViewController *subViewController = [[CloudPlaceAroundSearchViewController alloc] init];
+        BaseMapViewController *subViewController = [[CloudPlaceAroundSearchViewController alloc] init];
         
-  //  subViewController.mapView       = self.mapView;
-    subViewController.cloudAPI      = [[AMapCloudAPI alloc] initWithCloudKey:(NSString *)APIKey delegate:nil];
-    
-    subViewController.coordinate = self.coordinate;
-    
-    [self.navigationController pushViewController:(UIViewController*)subViewController animated:YES];
+      //  subViewController.mapView       = self.mapView;
+        subViewController.cloudAPI      = [[AMapCloudAPI alloc] initWithCloudKey:(NSString *)APIKey delegate:nil];
+        
+        subViewController.coordinate = self.coordinate;
+        
+        [self.navigationController pushViewController:(UIViewController*)subViewController animated:YES];
     }
     else if(tag == 1)
     {
@@ -249,8 +248,8 @@
 {
     UILabel * htc = [[UILabel alloc]init];
     htc.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.95);
-    htc.bounds = CGRectMake(0, 0, 250, 80);
-    htc.text = @"何天从 版权所有";
+    htc.bounds = CGRectMake(0, 0, self.view.frame.size.width, 80);
+    htc.text = @"by 何天从";
     htc.textAlignment = NSTextAlignmentCenter;
     htc.textColor = TCCoror(147, 147, 147);
     htc.font = [UIFont systemFontOfSize:12];
@@ -258,9 +257,12 @@
     
     
     UILabel * rights = [[UILabel alloc]init];
-    rights.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.98);
-    rights.bounds = CGRectMake(0, 0, 250, 80);
-    rights.text = @"© 2014-2015 hetiancong All rights reserved";
+    rights.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.97);
+    rights.bounds = CGRectMake(0, 0, self.view.frame.size.width, 80);
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy"];
+    NSString *yearString = [formatter stringFromDate:[NSDate date]];
+    rights.text = [NSString stringWithFormat:@"©2014-%@ @iHTCboy hetiancong All rights reserved", yearString];
     rights.textAlignment = NSTextAlignmentCenter;
     rights.textColor = TCCoror(147, 147, 147);
     rights.font = [UIFont systemFontOfSize:11];

@@ -26,7 +26,7 @@
     [self initTitle:@"应用推荐"];
     
     
-    UITableView * aboutAppTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain ];
+    UITableView * aboutAppTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStyleGrouped];
     aboutAppTable.separatorColor = [UIColor colorWithRed:0/255.0 green:122/255.0 blue:252/255.0 alpha:1];
     aboutAppTable.separatorStyle = UITableViewCellSelectionStyleNone;
     self.moreAppTable = aboutAppTable;
@@ -70,7 +70,7 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     
     //字体大小
@@ -80,6 +80,7 @@
     //cell被选中的颜色
     cell.selectedBackgroundView = [[UIView alloc]initWithFrame:cell.frame];
     cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0/255.0 green:122/255.0 blue:252/255.0 alpha:1];
+    cell.selectedBackgroundView.tintColor = [UIColor whiteColor];
 
     //右侧的指示
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
