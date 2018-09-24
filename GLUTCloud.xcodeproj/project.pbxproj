@@ -1009,8 +1009,7 @@
 				6D9BFF1121593D2E00A0BABF /* BaseController */,
 				6D9BFF1921593D2E00A0BABF /* View */,
 			);
-			name = Main;
-			path = "New Group";
+			path = Main;
 			sourceTree = "<group>";
 		};
 		6D9BFEE12159375F00A0BABF /* Models */ = {
