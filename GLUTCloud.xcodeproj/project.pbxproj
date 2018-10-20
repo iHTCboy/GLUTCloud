@@ -61,6 +61,8 @@
 		22D75A8F1A5B6E5C006CDA2F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D75A8E1A5B6E5C006CDA2F /* MessageUI.framework */; };
 		22D75A921A5B71C1006CDA2F /* TCAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D75A911A5B71C1006CDA2F /* TCAppViewController.m */; };
 		6D1B70611A5970F6002CC37D /* MapTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B70601A5970F6002CC37D /* MapTypeViewController.m */; };
+		6D20F94C217AEEFC004A4ED1 /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D20F94A217AEEFC004A4ED1 /* libBaiduMobStat.a */; };
+		6D20F94F217AEF67004A4ED1 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D20F94E217AEF67004A4ED1 /* Utility.m */; };
 		6D2C10662158F5F900C37783 /* AMapNaviKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2C0FF52158F5F900C37783 /* AMapNaviKit.framework */; };
 		6D2C10672158F5F900C37783 /* AMapCloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2C0FF62158F5F900C37783 /* AMapCloudKit.framework */; };
 		6D2C10682158F5F900C37783 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2C0FF72158F5F900C37783 /* AMapSearchKit.framework */; };
@@ -299,6 +301,10 @@
 		22D75A911A5B71C1006CDA2F /* TCAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAppViewController.m; sourceTree = "<group>"; };
 		6D1B705F1A5970F6002CC37D /* MapTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTypeViewController.h; sourceTree = "<group>"; };
 		6D1B70601A5970F6002CC37D /* MapTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTypeViewController.m; sourceTree = "<group>"; };
+		6D20F94A217AEEFC004A4ED1 /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
+		6D20F94B217AEEFC004A4ED1 /* BaiduMobStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
+		6D20F94D217AEF67004A4ED1 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		6D20F94E217AEF67004A4ED1 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		6D2C0FF42158F5F900C37783 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		6D2C0FF52158F5F900C37783 /* AMapNaviKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapNaviKit.framework; sourceTree = "<group>"; };
 		6D2C0FF62158F5F900C37783 /* AMapCloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapCloudKit.framework; sourceTree = "<group>"; };
@@ -536,6 +542,7 @@
 				6D2C10682158F5F900C37783 /* AMapSearchKit.framework in Frameworks */,
 				6DC03BD71A5583B300700EB2 /* AudioToolbox.framework in Frameworks */,
 				1855B0BF1A5275CC00F68934 /* AdSupport.framework in Frameworks */,
+				6D20F94C217AEEFC004A4ED1 /* libBaiduMobStat.a in Frameworks */,
 				1855B07B1A5249DE00F68934 /* OpenGLES.framework in Frameworks */,
 				6D9BFED521592F8F00A0BABF /* iflyMSC.framework in Frameworks */,
 				1855B07A1A5249D400F68934 /* MapKit.framework in Frameworks */,
@@ -655,9 +662,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6D20F949217AEEFC004A4ED1 /* BaiduMTJ_iOS_App_V4.5.0 */ = {
+			isa = PBXGroup;
+			children = (
+				6D20F94A217AEEFC004A4ED1 /* libBaiduMobStat.a */,
+				6D20F94B217AEEFC004A4ED1 /* BaiduMobStat.h */,
+			);
+			path = BaiduMTJ_iOS_App_V4.5.0;
+			sourceTree = "<group>";
+		};
 		6D2C0FF22158F5F900C37783 /* ThirdSDK */ = {
 			isa = PBXGroup;
 			children = (
+				6D20F949217AEEFC004A4ED1 /* BaiduMTJ_iOS_App_V4.5.0 */,
 				6D2C0FF32158F5F900C37783 /* FrameWork */,
 				6D2C11032158F7D300C37783 /* AFNetworking */,
 				6D2C11172158F7D300C37783 /* IQKeyBoardManager */,
@@ -1142,6 +1159,8 @@
 		6D9BFEF021593C6500A0BABF /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				6D20F94D217AEF67004A4ED1 /* Utility.h */,
+				6D20F94E217AEF67004A4ED1 /* Utility.m */,
 				225190031A5A200A0017F716 /* CommonUtility.h */,
 				225190041A5A200A0017F716 /* CommonUtility.m */,
 			);
@@ -1240,6 +1259,7 @@
 					188D521F1A5105B800925F03 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 28PV6G96R7;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1419,6 +1439,7 @@
 				6D2C11782158F7D300C37783 /* UIView+IQKeyboardToolbar.m in Sources */,
 				6D2C11902158F7D300C37783 /* SDWebImageManager.m in Sources */,
 				6D2C11822158F7D300C37783 /* MBProgressHUD+MJ.m in Sources */,
+				6D20F94F217AEF67004A4ED1 /* Utility.m in Sources */,
 				6D2C11982158F7D300C37783 /* SDImageCache.m in Sources */,
 				6DC03C061A55920500700EB2 /* NavigationViewController.m in Sources */,
 				1855B11B1A52A38E00F68934 /* AllMapCloudViewController.m in Sources */,
@@ -1574,6 +1595,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28PV6G96R7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1583,10 +1606,15 @@
 				INFOPLIST_FILE = GLUTCloud/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GLUTCloud/ThirdSDK/BaiduMTJ_iOS_App_V4.5.0",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = glutcloud;
 				PRODUCT_NAME = "桂林理工云图";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1597,6 +1625,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28PV6G96R7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1606,10 +1636,15 @@
 				INFOPLIST_FILE = GLUTCloud/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GLUTCloud/ThirdSDK/BaiduMTJ_iOS_App_V4.5.0",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = glutcloud;
 				PRODUCT_NAME = "桂林理工云图";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
