@@ -172,9 +172,6 @@
 		6D55868F1A57E75D009AF43D /* MyLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D55868E1A57E75D009AF43D /* MyLocationViewController.m */; };
 		6D9BFED421592F8500A0BABF /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D9BFED321592F8500A0BABF /* libstdc++.6.0.9.tbd */; };
 		6D9BFED521592F8F00A0BABF /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2C0FF42158F5F900C37783 /* iflyMSC.framework */; };
-		6D9BFEE72159380C00A0BABF /* 模拟器的libstdc++.6.0.9.tbd.zip in Resources */ = {isa = PBXBuildFile; fileRef = 6D9BFEE42159380C00A0BABF /* 模拟器的libstdc++.6.0.9.tbd.zip */; };
-		6D9BFEE82159380C00A0BABF /* 真机的libstdc++.6.0.9.tbd.zip in Resources */ = {isa = PBXBuildFile; fileRef = 6D9BFEE52159380C00A0BABF /* 真机的libstdc++.6.0.9.tbd.zip */; };
-		6D9BFEE92159380C00A0BABF /* Mac--Xcode10_library_not_found_for_-lstdc++_6_0_9.md in Resources */ = {isa = PBXBuildFile; fileRef = 6D9BFEE62159380C00A0BABF /* Mac--Xcode10_library_not_found_for_-lstdc++_6_0_9.md */; };
 		6D9BFF1F21593D2E00A0BABF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BFF0F21593D2E00A0BABF /* AppDelegate.m */; };
 		6D9BFF2021593D2E00A0BABF /* BaseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BFF1321593D2E00A0BABF /* BaseMapViewController.m */; };
 		6D9BFF2121593D2E00A0BABF /* BaseNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BFF1421593D2E00A0BABF /* BaseNaviViewController.m */; };
@@ -1285,7 +1282,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D9BFEE82159380C00A0BABF /* 真机的libstdc++.6.0.9.tbd.zip in Resources */,
 				188D522F1A5105B800925F03 /* Main.storyboard in Resources */,
 				6D2C10F42158F60C00C37783 /* allCloud@3x.png in Resources */,
 				6D2C10DD2158F60C00C37783 /* inDoor@2x.png in Resources */,
@@ -1299,7 +1295,6 @@
 				6D2C10E62158F60C00C37783 /* navi_route_waypoint@2x.png in Resources */,
 				6D2C10F92158F60C00C37783 /* default_main_gpsbutton_background_normal@3x.png in Resources */,
 				6D2C10E72158F60C00C37783 /* cloudPoint@2x.png in Resources */,
-				6D9BFEE72159380C00A0BABF /* 模拟器的libstdc++.6.0.9.tbd.zip in Resources */,
 				6D2C10F72158F60C00C37783 /* JWTlogomini.png in Resources */,
 				6D2C10E22158F60C00C37783 /* checkbtn_selected@2x.png in Resources */,
 				6D2C10EC2158F60C00C37783 /* myLocation@3x.png in Resources */,
@@ -1320,7 +1315,6 @@
 				6D2C117B2158F7D300C37783 /* IQKeyboardManager.bundle in Resources */,
 				6D2C10EA2158F60C00C37783 /* myLocation@2x.png in Resources */,
 				6D2C10D92158F60C00C37783 /* checkbtn_selected@3x.png in Resources */,
-				6D9BFEE92159380C00A0BABF /* Mac--Xcode10_library_not_found_for_-lstdc++_6_0_9.md in Resources */,
 				6D2C10E42158F60C00C37783 /* seting@2x.png in Resources */,
 				6D2C10D42158F60C00C37783 /* glutCloud@3x.png in Resources */,
 				6D2C10F32158F60C00C37783 /* default_main_gpsnormalbutton_image_disabled@3x.png in Resources */,

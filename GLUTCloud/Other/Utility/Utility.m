@@ -73,6 +73,7 @@
     if ([deviceModel isEqualToString:@"iPhone11,1"])    return @"iPhone XS (GSM+CDMA)";
     if ([deviceModel isEqualToString:@"iPhone11,2"])    return @"iPhone XS (GSM)";
     if ([deviceModel isEqualToString:@"iPhone11,4"])    return @"iPhone XS Max (GSM+CDMA)";
+    if ([deviceModel isEqualToString:@"iPhone11,5"])    return @"iPhone XS Max (GSM, Dual Sim, China)";
     if ([deviceModel isEqualToString:@"iPhone11,6"])    return @"iPhone XS Max (GSM)";
     if ([deviceModel isEqualToString:@"iPhone11,8"])    return @"iPhone XR (GSM+CDMA)";
     if ([deviceModel isEqualToString:@"iPhone11,9"])    return @"iPhone XR (GSM)";
@@ -125,6 +126,7 @@
     if ([deviceModel isEqualToString:@"iPad7,2"])       return @"iPad Pro 12.9 (2nd Gen)";
     if ([deviceModel isEqualToString:@"iPad7,3"])       return @"iPad Pro 10.5";
     if ([deviceModel isEqualToString:@"iPad7,4"])       return @"iPad Pro 10.5";
+    
     
     //Apple TV
     if ([deviceModel isEqualToString:@"AppleTV2,1"])   return @"Apple TV 2G";

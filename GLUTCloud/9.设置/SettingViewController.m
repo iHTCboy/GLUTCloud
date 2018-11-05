@@ -56,9 +56,10 @@
             case 1   : title = @"意见反馈";            break;
             case 2   : title = @"作者博客";            break;
             case 3   : title = @"推荐应用";            break;
-            case 4   : title = @"关于应用";            break;
-            case 5   : title = @"应用内评分";          break;
-            case 6   : title = @"AppStore评分";       break;
+            case 4   : title = @"隐私政策";            break;
+            case 5   : title = @"关于应用";            break;
+            case 6   : title = @"应用内评分";          break;
+            case 7   : title = @"AppStore评分";       break;
             default  :  break;
         }
     }
@@ -225,6 +226,11 @@
     else if([cell.textLabel.text isEqualToString:@"作者博客"])
     {
         [self inSafariOpenWithURL:@"https://www.iHTCboy.com"];
+        
+    }
+    else if([cell.textLabel.text isEqualToString:@"隐私政策"])
+    {
+        [self inSafariOpenWithURL:@"https://raw.githubusercontent.com/iHTCboy/GLUTCloud/master/LICENSE"];
         
     }
     
