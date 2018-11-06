@@ -24,7 +24,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     
-    [self initTitle:@"关于"];
+    [self initTitle:@"关于应用"];
     
     UIImageView * logoV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"aboutglutcloud"]];
     logoV.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.3);
@@ -45,11 +45,14 @@
     name.textColor = TCCoror(23, 23, 23);
     [self.view addSubview:name];
     
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    
+    NSString * versionString = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
     
     UILabel * version = [[UILabel alloc]init];
     version.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.44);
     version.bounds = CGRectMake(0, 0, self.view.frame.size.width, 80);
-    version.text = @"桂工云图iOS v5.0.0";
+    version.text = [@"桂工云图 iOS v" stringByAppendingString:versionString];
     version.textAlignment = NSTextAlignmentCenter;
     version.font = [UIFont systemFontOfSize:13];
     version.textColor = TCCoror(187, 187, 187);
