@@ -222,7 +222,7 @@
     self.mapView.showsUserLocation = NO;
     self.mapView.delegate = nil;
     
-     NSLog(@"latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+     //NSLog(@"latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
     
 }
 
@@ -249,7 +249,7 @@
     UILabel * htc = [[UILabel alloc]init];
     htc.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.95);
     htc.bounds = CGRectMake(0, 0, self.view.frame.size.width, 80);
-    htc.text = @"by 何天从";
+    //htc.text = @"by 何天从";
     htc.textAlignment = NSTextAlignmentCenter;
     htc.textColor = TCCoror(147, 147, 147);
     htc.font = [UIFont systemFontOfSize:12];

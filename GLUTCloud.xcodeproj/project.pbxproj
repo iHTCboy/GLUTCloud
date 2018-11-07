@@ -24,7 +24,6 @@
 		1855B0BF1A5275CC00F68934 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855B0BE1A5275CC00F68934 /* AdSupport.framework */; };
 		1855B11B1A52A38E00F68934 /* AllMapCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1855B11A1A52A38E00F68934 /* AllMapCloudViewController.m */; };
 		188D52261A5105B800925F03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188D52251A5105B800925F03 /* main.m */; };
-		188D522F1A5105B800925F03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188D522D1A5105B800925F03 /* Main.storyboard */; };
 		18BC8E481A53EBF10074AC59 /* AddMapCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC8E471A53EBF10074AC59 /* AddMapCloudViewController.m */; };
 		22518FB01A5A1F6E0017F716 /* PoiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22518FAF1A5A1F6E0017F716 /* PoiViewController.m */; };
 		225190021A5A1FE90017F716 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 225190011A5A1FE90017F716 /* POIAnnotation.m */; };
@@ -66,7 +65,6 @@
 		6D2C10662158F5F900C37783 /* AMapNaviKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2C0FF52158F5F900C37783 /* AMapNaviKit.framework */; };
 		6D2C10672158F5F900C37783 /* AMapCloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2C0FF62158F5F900C37783 /* AMapCloudKit.framework */; };
 		6D2C10682158F5F900C37783 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2C0FF72158F5F900C37783 /* AMapSearchKit.framework */; };
-		6D2C10D02158F60C00C37783 /* logostar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C109F2158F60C00C37783 /* logostar.png */; };
 		6D2C10D12158F60C00C37783 /* navigationMap@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C10A02158F60C00C37783 /* navigationMap@3x.png */; };
 		6D2C10D22158F60C00C37783 /* JWSlogomini.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C10A12158F60C00C37783 /* JWSlogomini.png */; };
 		6D2C10D32158F60C00C37783 /* searchBtn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C10A22158F60C00C37783 /* searchBtn@3x.png */; };
@@ -181,7 +179,6 @@
 		6D9BFF2521593D2E00A0BABF /* HomeButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BFF1B21593D2E00A0BABF /* HomeButtonView.m */; };
 		6D9BFF2821593D5100A0BABF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6D9BFF2621593D5100A0BABF /* README.md */; };
 		6D9BFF2921593D5100A0BABF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6D9BFF2721593D5100A0BABF /* LICENSE */; };
-		6D9BFF2A21593FAD00A0BABF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188D52321A5105B800925F03 /* LaunchScreen.xib */; };
 		6D9DE0501A5AC1D4006AA0B6 /* InvertGeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DE04F1A5AC1D4006AA0B6 /* InvertGeoViewController.m */; };
 		6D9DE0531A5AC203006AA0B6 /* ReGeocodeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DE0521A5AC203006AA0B6 /* ReGeocodeAnnotation.m */; };
 		6DC03BC21A54F24A00700EB2 /* ReselectCoordinateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC03BC01A54F24A00700EB2 /* ReselectCoordinateView.m */; };
@@ -195,6 +192,8 @@
 		6DC03C061A55920500700EB2 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC03C031A55920500700EB2 /* NavigationViewController.m */; };
 		6DC03C071A55920500700EB2 /* RouteShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC03C051A55920500700EB2 /* RouteShowViewController.m */; };
 		6DE7E7DF1A5C0DC400923C79 /* TCHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7E7DE1A5C0DC400923C79 /* TCHelpViewController.m */; };
+		6DFFE61D219323AF00AC0E6D /* GLUT-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C109F2158F60C00C37783 /* GLUT-logo.png */; };
+		6DFFE621219324A600AC0E6D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFFE61F219324A600AC0E6D /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -221,12 +220,8 @@
 		188D52201A5105B800925F03 /* 桂林理工云图.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "桂林理工云图.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		188D52241A5105B800925F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188D52251A5105B800925F03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		188D522E1A5105B800925F03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		188D52331A5105B800925F03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		188D523E1A5105B800925F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188D523F1A5105B800925F03 /* GLUTCloudTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLUTCloudTests.m; sourceTree = "<group>"; };
-		188D52491A5105F000925F03 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		188D524A1A5105F000925F03 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		18BC8E461A53EBF10074AC59 /* AddMapCloudViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMapCloudViewController.h; sourceTree = "<group>"; };
 		18BC8E471A53EBF10074AC59 /* AddMapCloudViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMapCloudViewController.m; sourceTree = "<group>"; };
 		22518FAE1A5A1F6E0017F716 /* PoiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoiViewController.h; sourceTree = "<group>"; };
@@ -306,7 +301,7 @@
 		6D2C0FF52158F5F900C37783 /* AMapNaviKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapNaviKit.framework; sourceTree = "<group>"; };
 		6D2C0FF62158F5F900C37783 /* AMapCloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapCloudKit.framework; sourceTree = "<group>"; };
 		6D2C0FF72158F5F900C37783 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
-		6D2C109F2158F60C00C37783 /* logostar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logostar.png; sourceTree = "<group>"; };
+		6D2C109F2158F60C00C37783 /* GLUT-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GLUT-logo.png"; sourceTree = "<group>"; };
 		6D2C10A02158F60C00C37783 /* navigationMap@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationMap@3x.png"; sourceTree = "<group>"; };
 		6D2C10A12158F60C00C37783 /* JWSlogomini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JWSlogomini.png; sourceTree = "<group>"; };
 		6D2C10A22158F60C00C37783 /* searchBtn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchBtn@3x.png"; sourceTree = "<group>"; };
@@ -521,6 +516,8 @@
 		6DC03C051A55920500700EB2 /* RouteShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteShowViewController.m; sourceTree = "<group>"; };
 		6DE7E7DD1A5C0DC300923C79 /* TCHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCHelpViewController.h; sourceTree = "<group>"; };
 		6DE7E7DE1A5C0DC400923C79 /* TCHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCHelpViewController.m; sourceTree = "<group>"; };
+		6DFFE620219324A600AC0E6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6DFFE6232193252E00AC0E6D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -623,8 +620,6 @@
 				6D2C109C2158F60B00C37783 /* Resource */,
 				6D2C0FF22158F5F900C37783 /* ThirdSDK */,
 				188D52231A5105B800925F03 /* Supporting Files */,
-				188D522D1A5105B800925F03 /* Main.storyboard */,
-				188D52321A5105B800925F03 /* LaunchScreen.xib */,
 				1855B06D1A52490200F68934 /* FrameWork */,
 			);
 			path = GLUTCloud;
@@ -633,6 +628,7 @@
 		188D52231A5105B800925F03 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6DFFE61F219324A600AC0E6D /* LaunchScreen.xib */,
 				6D9BFF2721593D5100A0BABF /* LICENSE */,
 				6D9BFF2621593D5100A0BABF /* README.md */,
 				18405CB51A53E85E00968259 /* images.xcassets */,
@@ -708,7 +704,7 @@
 		6D2C109E2158F60C00C37783 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				6D2C109F2158F60C00C37783 /* logostar.png */,
+				6D2C109F2158F60C00C37783 /* GLUT-logo.png */,
 				6D2C10A02158F60C00C37783 /* navigationMap@3x.png */,
 				6D2C10A12158F60C00C37783 /* JWSlogomini.png */,
 				6D2C10A22158F60C00C37783 /* searchBtn@3x.png */,
@@ -1266,6 +1262,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 188D52171A5105B700925F03;
 			productRefGroup = 188D52211A5105B800925F03 /* Products */;
@@ -1282,7 +1279,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188D522F1A5105B800925F03 /* Main.storyboard in Resources */,
 				6D2C10F42158F60C00C37783 /* allCloud@3x.png in Resources */,
 				6D2C10DD2158F60C00C37783 /* inDoor@2x.png in Resources */,
 				6D9BFF2821593D5100A0BABF /* README.md in Resources */,
@@ -1299,6 +1295,7 @@
 				6D2C10E22158F60C00C37783 /* checkbtn_selected@2x.png in Resources */,
 				6D2C10EC2158F60C00C37783 /* myLocation@3x.png in Resources */,
 				6D2C11A42158F83800C37783 /* AMapNavi.bundle in Resources */,
+				6DFFE621219324A600AC0E6D /* LaunchScreen.xib in Resources */,
 				6D2C11832158F7D300C37783 /* MBProgressHUD.bundle in Resources */,
 				6D2C11A52158F83800C37783 /* AMap.bundle in Resources */,
 				6D2C10F02158F60C00C37783 /* newpoi_normal@3x.png in Resources */,
@@ -1319,6 +1316,7 @@
 				6D2C10D42158F60C00C37783 /* glutCloud@3x.png in Resources */,
 				6D2C10F32158F60C00C37783 /* default_main_gpsnormalbutton_image_disabled@3x.png in Resources */,
 				6D2C10E02158F60C00C37783 /* roundSearch@3x.png in Resources */,
+				6DFFE61D219323AF00AC0E6D /* GLUT-logo.png in Resources */,
 				6D2C10EB2158F60C00C37783 /* checkbtn_normal@3x.png in Resources */,
 				6D2C10DE2158F60C00C37783 /* inDoor@3x.png in Resources */,
 				6D2C10ED2158F60C00C37783 /* navi_route_startpoint@2x.png in Resources */,
@@ -1327,11 +1325,9 @@
 				6DC03BC31A54F24A00700EB2 /* ReselectCoordinateView.xib in Resources */,
 				6D2C10D22158F60C00C37783 /* JWSlogomini.png in Resources */,
 				6D2C10D62158F60C00C37783 /* searchBtn@2x.png in Resources */,
-				6D2C10D02158F60C00C37783 /* logostar.png in Resources */,
 				6D2C10E82158F60C00C37783 /* navi_route_startpoint@3x.png in Resources */,
 				6D2C10DF2158F60C00C37783 /* covers@3x.png in Resources */,
 				6D2C10DC2158F60C00C37783 /* covers@2x.png in Resources */,
-				6D9BFF2A21593FAD00A0BABF /* LaunchScreen.xib in Resources */,
 				6D2C10E52158F60C00C37783 /* aboutglutcloud.png in Resources */,
 				6D2C10D52158F60C00C37783 /* glutCloud@2x.png in Resources */,
 				6D2C11842158F7D300C37783 /* timeline_image_loading.png in Resources */,
@@ -1461,20 +1457,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		188D522D1A5105B800925F03 /* Main.storyboard */ = {
+		6DFFE61F219324A600AC0E6D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				188D522E1A5105B800925F03 /* Base */,
-				188D52491A5105F000925F03 /* zh-Hans */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		188D52321A5105B800925F03 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				188D52331A5105B800925F03 /* Base */,
-				188D524A1A5105F000925F03 /* zh-Hans */,
+				6DFFE620219324A600AC0E6D /* Base */,
+				6DFFE6232193252E00AC0E6D /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

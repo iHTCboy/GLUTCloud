@@ -84,7 +84,7 @@
     // 此处(startWithAppId之前)可以设置初始化的可选参数，具体有哪些参数，可详见BaiduMobStat.h文件，例如：
     statTracker.shortAppVersion  = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     //    statTracker.enableDebugOn = YES;
-    [statTracker startWithAppId:@"057db5e816"]; // 设置您在mtj网站上添加的app的appkey,此处AppId即为应用的appKey
+    [statTracker startWithAppId:@"7964219cd6"]; // 设置您在mtj网站上添加的app的appkey,此处AppId即为应用的appKey
 #if DEBUG
     NSLog(@"Debug Model");
 #else
