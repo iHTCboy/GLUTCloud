@@ -28,7 +28,7 @@
 #import "MAPinAnnotationView.h"
 #import "MAAnnotationView.h"
 #import "MAPointAnnotation.h"
-#import "MAUserlocation.h"
+#import "MAUserLocation.h"
 #import "MAMapServices.h"
 #import "MATouchPoi.h"
 #import "MAGeodesicPolyline.h"

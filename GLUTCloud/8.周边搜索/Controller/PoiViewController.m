@@ -10,10 +10,11 @@
 #import "POIAnnotation.h"
 #import "PoiDetailViewController.h"
 #import "CommonUtility.h"
+#import "TCSearchResultsVC.h"
 
 #define GeoPlaceHolder @"周边搜索"
 
-@interface PoiViewController ()<UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface PoiViewController ()<UISearchBarDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate>
 
 {
 
@@ -22,7 +23,7 @@
 }
 
 @property (nonatomic, strong) UISearchBar *searchBar;
-@property (nonatomic, strong) UISearchDisplayController *displayController;
+@property (nonatomic, strong) UISearchController *displayController;
 @property (nonatomic, strong) NSMutableArray *searchResultAnnos;
 
 @property (nonatomic, assign)  CLLocationCoordinate2D center2D;
@@ -37,46 +38,34 @@
 
 - (void)initSearchBar
 {
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 44)];
-    self.searchBar.barStyle     = UIBarStyleDefault;
-    self.searchBar.translucent  = YES;
-    self.searchBar.delegate     = self;
-    self.searchBar.placeholder  = GeoPlaceHolder;
-    self.searchBar.keyboardType = UIKeyboardTypeDefault;
-   // self.searchBar.backgroundColor = [UIColor colorWithRed:1.000 green:0.996 blue:0.988 alpha:0.100];
-    self.searchBar.tintColor = appMainColor;
-    self.searchBar.hidden = NO;
-    [self.view addSubview:self.searchBar];
+
 }
 
 - (void)initSearchDisplay
 {
-    self.displayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
-    self.displayController.searchBar.backgroundColor = [UIColor clearColor];
-    self.displayController.delegate                = self;
-    self.displayController.searchResultsDataSource = self;
-    self.displayController.searchResultsDelegate   = self;
+    TCSearchResultsVC *sr = [[TCSearchResultsVC alloc] init];
+    sr.tableView.delegate = self;
+    sr.tableView.dataSource = self;
+    
+    self.displayController = [[UISearchController alloc] initWithSearchResultsController:sr];
+
+    self.displayController.searchResultsUpdater = self;
+
+    self.displayController.dimsBackgroundDuringPresentation = NO;
+
+    [self.displayController.searchBar sizeToFit];
+
+    
+    self.displayController.searchBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 44);
+    self.searchBar = self.displayController.searchBar;
+    [self.view addSubview:self.searchBar];
+
 }
 
-#pragma mark - UISearchBarDelegate
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+#pragma mark - UISearchResultsUpdating
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
-    NSString *key = searchBar.text;
-    
-    [self aroundLocalSearchWithKey:key];
-    
-    [self.displayController setActive:NO animated:YES];
-    
-    self.searchBar.placeholder = key;
-}
-
-#pragma mark - UISearchDisplayDelegate
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self aroundLocalSearchWithKey:searchString];
-    return YES;
+    [self aroundLocalSearchWithKey:searchController.searchBar.text];
 }
 
 #pragma mark - UITableViewDataSource
@@ -116,8 +105,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //1.关闭搜索框
-    [self.displayController setActive:NO animated:NO];
-
+    [self.displayController dismissViewControllerAnimated:YES completion:nil];
     
     //2、设置为中心点
     AMapPOI * aPOI = self.searchResultAnnos[indexPath.row];
@@ -307,7 +295,8 @@
     
     [self addAnnotationsWithPOIs:[respons pois]];
     
-    [self.displayController.searchResultsTableView reloadData];
+    UITableView *tbv = [(UITableViewController *)self.displayController.searchResultsController tableView];
+    [tbv reloadData];
     
     
     UILabel * counts = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
@@ -316,7 +305,7 @@
     counts.textColor = appMainColor;
     counts.text = [NSString stringWithFormat:@"共搜索到%ld条",respons.count];
     
-    self.displayController.searchResultsTableView.tableHeaderView = counts;
+    tbv.tableHeaderView = counts;
 }
 
 - (void)searchRequest:(id)request didFailWithError:(NSError *)error

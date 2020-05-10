@@ -72,7 +72,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.view.backgroundColor = [UIColor whiteColor];
+    if (@available(iOS 13.0, *)) {
+        self.view.backgroundColor = UIColor.secondarySystemGroupedBackgroundColor;
+    } else {
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
 
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -308,7 +312,7 @@
                                 RestIKey,@"key",
                                 allTableID,@"tableid",
                                 @"1",@"loctype", //使用GPS坐标方式存储
-                                [dataDic JSONString],@"data",
+                                [self stringFromJson:dataDic],@"data",
                                 nil];
     
     
@@ -347,6 +351,20 @@
     
 }
 
+
+- (NSString *)stringFromJson:(NSDictionary *)JSONDic
+{
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:JSONDic
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    if (error) {
+        return @"";
+    } else {
+        return jsonString;
+    }
+}
 
 #pragma mark - ReSelectLocationMapViewControllerDelegate
 -(void)selectLocationDidResponse:(AMapReGeocodeSearchResponse *)response WithSelectLocation:(CLLocationCoordinate2D)location
@@ -535,6 +553,11 @@
     explainAddressF.alwaysBounceVertical = YES;
     explainAddressF.showsVerticalScrollIndicator = YES;
     explainAddressF.font = [UIFont systemFontOfSize:16];
+    
+    if (@available(iOS 13.0, *)) {
+        detailedAddressF.backgroundColor = [UIColor secondarySystemGroupedBackgroundColor];
+        explainAddressF.backgroundColor = [UIColor secondarySystemGroupedBackgroundColor];
+    }
     
     
 #pragma mark - 创建 选择地点和提交按钮

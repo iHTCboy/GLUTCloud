@@ -76,6 +76,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (@available(iOS 13.0, *)) {
+        self.view.backgroundColor = UIColor.secondarySystemGroupedBackgroundColor;
+    }
 
     [self initWithTitle:@"桂林理工大学云图"];
     [self initWithRights];
@@ -259,10 +263,10 @@
     UILabel * rights = [[UILabel alloc]init];
     rights.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.97);
     rights.bounds = CGRectMake(0, 0, self.view.frame.size.width, 80);
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy"];
-    NSString *yearString = [formatter stringFromDate:[NSDate date]];
-    rights.text = [NSString stringWithFormat:@"©2014-%@ @iHTCboy hetiancong All rights reserved", yearString];
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateFormat:@"yyyy"];
+//    NSString *yearString = [formatter stringFromDate:[NSDate date]];
+    rights.text = @"@iHTCboy";//[NSString stringWithFormat:@"©2014-%@ @iHTCboy", yearString];
     rights.textAlignment = NSTextAlignmentCenter;
     rights.textColor = TCCoror(147, 147, 147);
     rights.font = [UIFont systemFontOfSize:11];

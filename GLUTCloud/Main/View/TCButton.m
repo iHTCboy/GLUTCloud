@@ -36,8 +36,14 @@
 
 -(void)drawRect:(CGRect)rect
 {
+    if (@available(iOS 13.0, *)) {
+        [self setTitleColor:UIColor.labelColor forState:UIControlStateNormal];
+        self.layer.borderColor = [[UIColor tertiaryLabelColor] CGColor];
+    } else {
+        [self setTitleColor:[UIColor colorWithWhite:0.098 alpha:1.000] forState:UIControlStateNormal];
+        self.layer.borderColor = [[UIColor colorWithWhite:0.800 alpha:1.000]CGColor];
+    }
 
-    [self setTitleColor:[UIColor colorWithWhite:0.098 alpha:1.000] forState:UIControlStateNormal];
     self.titleLabel.font = [UIFont systemFontOfSize:15];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     //self.titleLabel.backgroundColor = [UIColor colorWithRed:0.270 green:0.633 blue:1.000 alpha:1];
@@ -45,7 +51,6 @@
 //    self.titleLabel.layer.cornerRadius = 4;
 //    self.titleLabel.layer.masksToBounds = YES;
     
-    self.layer.borderColor = [[UIColor colorWithWhite:0.800 alpha:1.000]CGColor];
     self.layer.borderWidth = 0.5f;
     self.layer.cornerRadius = 0;
     self.layer.masksToBounds = YES;

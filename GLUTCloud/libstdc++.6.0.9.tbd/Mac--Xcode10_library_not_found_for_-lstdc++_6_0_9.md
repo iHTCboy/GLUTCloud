@@ -1,4 +1,29 @@
-## Xcode10：library not found for -lstdc++.6.0.9 临时解决 
+2020-05-10 更新
+
+## Xcode 11
+
+Xcode11的 CoreSimulator 文件夹被移至到:
+
+```
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/
+```
+
+
+| 平台 | 文件夹 | 文件 | 大小 | 路径 |
+|---|---|---|---|---|
+| 模拟器运行需要 | CoreSimulator | libstdc++.6.0.9.dylib  | 766,624B | /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/ |
+|  模拟器编译需要 | iPhoneSimulator | libstdc++.6.0.9.tbd  | 206,800B | /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/lib/ |
+| iOS真机 | iPhoneOS | libstdc++.6.0.9.tbd | 209,673B | /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/ |
+|  macOS APP | MacOSX | libstdc++.6.0.9.tbd | 206,751B | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/ |      
+
+
+注：替换文件路径：`/GLUTCloud/libstdc++.6.0.9.tbd/Xcode11/libstdc++6.zip`
+
+
+- [Xcode 11 缺少libstdc++.6.0.9的解决方案、运行模拟器时报错问题_移动开发_u014228527的专栏-CSDN博客](https://blog.csdn.net/u014228527/article/details/102639188)
+
+
+## Xcode 10：library not found for -lstdc++.6.0.9 临时解决 
 
 ### 下载stdc++.6.0.9
 

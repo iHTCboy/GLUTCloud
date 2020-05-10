@@ -86,7 +86,11 @@
 
 - (void)setup
 {
-    self.backgroundColor = [UIColor whiteColor];
+    if (@available(iOS 13.0, *)) {
+        self.backgroundColor = UIColor.secondarySystemGroupedBackgroundColor;
+    } else {
+        self.backgroundColor = [UIColor whiteColor];
+    }
     
 }
 

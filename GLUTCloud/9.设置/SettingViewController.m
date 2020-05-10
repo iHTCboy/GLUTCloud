@@ -256,6 +256,7 @@
     if (@available(iOS 9.0, *)) {
         SFSafariViewController * sf = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
         if (@available(iOS 11.0, *)) {
+            sf.preferredControlTintColor = [UIColor whiteColor];
             sf.preferredBarTintColor = [UIColor colorWithRed:(66)/255.0 green:(156)/255.0 blue:(249)/255.0 alpha:1];
             sf.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleClose;
         }
@@ -284,7 +285,7 @@
     
     
     // 设置收件人列表
-    [mail setToRecipients:@[@"ihetiancong@qq.com"]];
+    [mail setToRecipients:@[@"iHTCteam@gmail.com"]];
     
     
     //        // 设置抄送人列表

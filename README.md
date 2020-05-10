@@ -14,7 +14,11 @@ Cloud map of guilin university of technology -- cloud is on the way! Map navigat
 
 
 ###  项目说明
-因高德地图新版本接口已经全部变更，所以以后不会在更新新SDK，只会维护。另外Xcode 10中将libstdc++.6.0.9库文件删除，SDK依赖 libstdc++.6.0.9 的会在Xcode 10无法运行，解决方案：https://blog.csdn.net/ZuoWeiXiaoDuZuoZuo/article/details/82756116?utm_source=copy 。另外也可以查看项目目录下有教程和libstdc++.6.0.9库文件:  `/GLUTCloud/GLUTCloud/libstdc++.6.0.9.tbd/`
+因高德地图新版本接口已经全部变更，所以以后不会在更新新SDK，只会维护。另外 Xcode 10 以后将libstdc++.6.0.9库文件弃用并删除，SDK依赖 libstdc++.6.0.9 的会在Xcode 10无法运行，解决方案：https://blog.csdn.net/ZuoWeiXiaoDuZuoZuo/article/details/82756116?utm_source=copy 。另外也可以查看项目目录下有教程和libstdc++.6.0.9库文件:  `/GLUTCloud/GLUTCloud/libstdc++.6.0.9.tbd/`
+
+
+#### 2020-05-10 更新 Xcode11
+- [Xcode 11 缺少libstdc++.6.0.9的解决方案、运行模拟器时报错问题_移动开发_u014228527的专栏-CSDN博客](https://blog.csdn.net/u014228527/article/details/102639188)
 
 
 ### 预览

@@ -11,13 +11,14 @@
 #import "CloudPOIAnnotation.h"
 //#import <MAMapKit/MAMapKit.h>
 #import <AMapNaviKit/AMapNaviKit.h>
+#import "TCSearchResultsVC.h"
 
 #define GeoPlaceHolder @"桂工云图搜索"
 
-@interface CloudPlaceAroundSearchViewController ()<UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface CloudPlaceAroundSearchViewController ()<UISearchBarDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UISearchBar *searchBar;
-@property (nonatomic, strong) UISearchDisplayController *displayController;
+@property (nonatomic, strong) UISearchController *displayController;
 
 @property (nonatomic, strong) NSMutableArray *tips;
 
@@ -122,45 +123,34 @@
 
 - (void)initSearchBar
 {
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 44)];
-    self.searchBar.barStyle     = UIBarStyleDefault;
-    self.searchBar.translucent  = YES;
-    self.searchBar.delegate     = self;
-    self.searchBar.placeholder  = GeoPlaceHolder;
-    self.searchBar.keyboardType = UIKeyboardTypeDefault;
-    self.searchBar.backgroundColor = [UIColor colorWithRed:1.000 green:0.996 blue:0.988 alpha:0.900];
-    self.searchBar.tintColor = [UIColor colorWithRed:0.332 green:0.487 blue:1.000 alpha:1.000];
-    self.searchBar.hidden = YES;
-    [self.view addSubview:self.searchBar];
+
 }
 
 - (void)initSearchDisplay
 {
-    self.displayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
-    self.displayController.delegate                = self;
-    self.displayController.searchResultsDataSource = self;
-    self.displayController.searchResultsDelegate   = self;
+    TCSearchResultsVC *sr = [[TCSearchResultsVC alloc] init];
+    sr.tableView.delegate = self;
+    sr.tableView.dataSource = self;
+    
+    self.displayController = [[UISearchController alloc] initWithSearchResultsController:sr];
+
+    self.displayController.searchResultsUpdater = self;
+
+    self.displayController.dimsBackgroundDuringPresentation = NO;
+
+    [self.displayController.searchBar sizeToFit];
+
+    
+    self.displayController.searchBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 44);
+    self.searchBar = self.displayController.searchBar;
+    self.searchBar.hidden = YES;
+    [self.view addSubview:self.searchBar];
 }
 
-#pragma mark - UISearchBarDelegate
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+#pragma mark - UISearchResultsUpdating
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
-    NSString *key = searchBar.text;
-    
-    [self cloudPlaceLocalSearchWithKey:key];
-    
-    [self.displayController setActive:NO animated:YES];
-    
-    self.searchBar.placeholder = key;
-}
-
-#pragma mark - UISearchDisplayDelegate
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self cloudPlaceLocalSearchWithKey:searchString];
-    return YES;
+    [self cloudPlaceLocalSearchWithKey:searchController.searchBar.text];
 }
 
 
@@ -209,7 +199,7 @@
     
     [self.mapView selectAnnotation:ann animated:YES];
     
-    [self.displayController setActive:NO animated:NO];
+    [self.displayController dismissViewControllerAnimated:YES completion:nil];
     
     self.searchBar.placeholder = cloudPOI.name;
 }
@@ -272,7 +262,8 @@
     
     [self addAnnotationsWithPOIs:[response POIs]];
     
-    [self.displayController.searchResultsTableView reloadData];
+    UITableView *tbv = [(UITableViewController *)self.displayController.searchResultsController tableView];
+    [tbv reloadData];
     
     UILabel * counts = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
     
@@ -280,7 +271,7 @@
     counts.textColor = appMainColor;
     counts.text = [NSString stringWithFormat:@"共搜索到%ld条",response.count];
     
-    self.displayController.searchResultsTableView.tableHeaderView = counts;
+    tbv.tableHeaderView = counts;
 }
 
 

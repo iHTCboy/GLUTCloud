@@ -21,8 +21,11 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+    if (@available(iOS 13.0, *)) {
+        self.view.backgroundColor = UIColor.secondarySystemGroupedBackgroundColor;
+    } else {
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
     
     [self initTitle:@"关于应用"];
     
@@ -42,7 +45,11 @@
     name.text = @"桂林理工大学云图";
     name.textAlignment = NSTextAlignmentCenter;
     name.font = [UIFont boldSystemFontOfSize:21];
-    name.textColor = TCCoror(23, 23, 23);
+    if (@available(iOS 13.0, *)) {
+        name.textColor = UIColor.labelColor;
+    } else {
+        name.textColor = TCCoror(23, 23, 23);
+    }
     [self.view addSubview:name];
     
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
@@ -59,7 +66,7 @@
     [self.view addSubview:version];
     
     UILabel * htc = [[UILabel alloc]init];
-    htc.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.95);
+    htc.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.92);
     htc.bounds = CGRectMake(0, 0, self.view.frame.size.width, 80);
     htc.text = @"何天从 版权所有";
     htc.textAlignment = NSTextAlignmentCenter;
@@ -69,7 +76,7 @@
     
 
     UILabel * rights = [[UILabel alloc]init];
-    rights.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.98);
+    rights.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.95);
     rights.bounds = CGRectMake(0, 0, self.view.frame.size.width, 80);
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy"];

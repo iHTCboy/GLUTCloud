@@ -219,6 +219,9 @@ typedef NS_ENUM(NSInteger, TravelTypes)
 {
     UIView * settingViews = [[UIView alloc]initWithFrame:CGRectMake(0, 0, viewWidth, kSetingViewHeight)];
     [self.view addSubview:settingViews];
+    if (@available(iOS 13.0, *)) {
+        settingViews.backgroundColor = UIColor.secondarySystemGroupedBackgroundColor;
+    }
     
     UISegmentedControl *segCtrl = [[UISegmentedControl alloc] initWithItems:@[@"步行", @"驾车"]];
     segCtrl.tintColor = appMainColor;
@@ -251,7 +254,10 @@ typedef NS_ENUM(NSInteger, TravelTypes)
     [settingViews addSubview:startMapLocationBtn];
     _startMapPointBtn = startMapLocationBtn;
     
-    
+    if (@available(iOS 13.0, *)) {
+        [startSelfLocationBtn setTitleColor:UIColor.labelColor forState:UIControlStateNormal];
+        [startMapLocationBtn setTitleColor:UIColor.labelColor forState:UIControlStateNormal];
+    }
     
     UILabel *endPointLabel = [self createTitleLabel:@"终   点"];
     endPointLabel.frame = CGRectMake(LabelLeft, margin * 2 + LabelHight * 2 , LabelWidth, LabelHight);
@@ -267,9 +273,11 @@ typedef NS_ENUM(NSInteger, TravelTypes)
     [settingViews addSubview:endMapLocationBtn];
     _endMapPointBtn = endMapLocationBtn;
     
+    if (@available(iOS 13.0, *)) {
+        [endMapLocationBtn setTitleColor:UIColor.labelColor forState:UIControlStateNormal];
+    }
+    
 
-    
-    
     UILabel *wayPointLabel = [self createTitleLabel:@"途径点"];
     wayPointLabel.frame = CGRectMake(LabelLeft, margin * 2 + LabelHight * 3  , LabelWidth, LabelHight);
     [settingViews addSubview:wayPointLabel];
@@ -292,7 +300,10 @@ typedef NS_ENUM(NSInteger, TravelTypes)
     [_wayMapPointBtn setAlpha:0.3];
     
 
-    
+    if (@available(iOS 13.0, *)) {
+        [wayMapLocationBtn setTitleColor:UIColor.labelColor forState:UIControlStateNormal];
+        [wayMapLocationBtn setTitleColor:UIColor.tertiaryLabelColor forState:UIControlStateDisabled];
+    }
     
     
 
@@ -323,7 +334,11 @@ typedef NS_ENUM(NSInteger, TravelTypes)
     UIView * line = [[UIView alloc]initWithFrame:CGRectMake(0, kSetingViewHeight -1, viewWidth, 1)];
     line.backgroundColor = [UIColor blackColor];
     [settingViews addSubview:line];
-    
+        
+    if (@available(iOS 13.0, *)) {
+        [routeBtn setTitleColor:UIColor.labelColor forState:UIControlStateNormal];
+        [simuBtn setTitleColor:UIColor.labelColor forState:UIControlStateNormal];
+    }
 }
 
 

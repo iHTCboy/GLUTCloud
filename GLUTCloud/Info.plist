@@ -15,11 +15,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>5.1.2</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2018.11.07</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -28,9 +28,13 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>请允许桂工云图使用定位，以便根据定位来显示你附近的建筑信息</string>
+	<string>请允许桂工云图使用定位，以便根据定位来显示你附近的信息</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>请允许桂工云图使用定位，以便根据定位来显示你附近的建筑信息</string>
+	<string>请允许桂工云图使用定位，以便根据定位来显示你附近的信息</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>请允许桂工云图使用定位，以便根据定位来显示你附近的信息</string>
+	<key>NSLocationUsageDescription</key>
+	<string>请允许桂工云图使用定位，以便根据定位来显示你附近的信息</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -48,5 +52,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>mtj_appkey</key>
+	<string>7964219cd6</string>
+	<key>mtj_deubglog</key>
+	<string>0</string>
 </dict>
 </plist>

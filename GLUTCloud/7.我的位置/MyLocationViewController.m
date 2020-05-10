@@ -56,7 +56,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    if (@available(iOS 13.0, *)) {
+        self.view.backgroundColor = UIColor.secondarySystemGroupedBackgroundColor;
+    } else {
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -260,12 +264,16 @@
     
     UITextView * detailedAddressF = [[UITextView alloc]initWithFrame:CGRectMake(LabelWidth + margin, LabelHight * 8 + margin * 8 , viewWidth - LabelWidth - 2 * margin, LabelHight * 3  - margin)];
     detailedAddressF.layer.borderWidth = 1;
-    detailedAddressF.layer.borderColor = [[UIColor lightGrayColor]CGColor];
+    detailedAddressF.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     detailedAddressF.layer.cornerRadius = 3;
     detailedAddressF.layer.masksToBounds = YES;
     detailedAddressF.alwaysBounceVertical = YES;
     detailedAddressF.showsVerticalScrollIndicator = YES;
     detailedAddressF.font = [UIFont systemFontOfSize:16];
+    if (@available(iOS 13.0, *)) {
+        detailedAddressF.backgroundColor = UIColor.secondarySystemGroupedBackgroundColor;
+        detailedAddressF.textColor = UIColor.labelColor;
+    }
     
     detailedAddressF.editable = NO;
     [self.view addSubview:detailedAddressF];
