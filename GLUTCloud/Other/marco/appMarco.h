@@ -49,7 +49,7 @@ const static NSString *allTableID = @"54a269e7e4b053daeaf70fad";
 #define debugMethod()
 #endif
 
-
+#define TCCoror(a,b,c) [UIColor colorWithRed:(a/255.0) green:(b/255.0) blue:(c/255.0) alpha:1]
 #define appMainColor [UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000]
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)

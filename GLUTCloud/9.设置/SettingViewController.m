@@ -16,6 +16,8 @@
 #import <StoreKit/StoreKit.h>
 #import <SafariServices/SafariServices.h>
 
+#import "GLUTCloud-Swift.h"
+
 @interface SettingViewController ()<UITableViewDataSource, UITableViewDelegate,MFMessageComposeViewControllerDelegate,MFMailComposeViewControllerDelegate,UIActionSheetDelegate,UIAlertViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -55,11 +57,12 @@
             case 0   : title = @"使用帮助";            break;
             case 1   : title = @"意见反馈";            break;
             case 2   : title = @"作者博客";            break;
-            case 3   : title = @"推荐应用";            break;
-            case 4   : title = @"隐私政策";            break;
-            case 5   : title = @"关于应用";            break;
-            case 6   : title = @"应用内评分";          break;
-            case 7   : title = @"AppStore评分";       break;
+            case 3   : title = @"作者微博";            break;
+            case 4   : title = @"推荐应用";            break;
+            case 5   : title = @"隐私政策";            break;
+            case 6   : title = @"关于应用";            break;
+            case 7   : title = @"应用内评分";          break;
+            case 8   : title = @"AppStore评分";       break;
             default  :  break;
         }
     }
@@ -91,7 +94,7 @@
     }
     else
     {
-        section = 8;
+        section = 9;
     }
     
     return section;
@@ -210,7 +213,7 @@
     {
         [self initbackItem];
         
-        TCAppViewController * apps = [[TCAppViewController alloc]init];
+        ITAdvancelDetailViewController * apps = [[ITAdvancelDetailViewController alloc]init];
         
         [self.navigationController pushViewController:apps animated:YES];
         
@@ -225,7 +228,12 @@
     }
     else if([cell.textLabel.text isEqualToString:@"作者博客"])
     {
-        [self inSafariOpenWithURL:@"https://www.iHTCboy.com"];
+        [self inSafariOpenWithURL:@"https://iHTCboy.com"];
+        
+    }
+    else if([cell.textLabel.text isEqualToString:@"作者微博"])
+    {
+        [self inSafariOpenWithURL:@"https://weibo.com/iHTCapp"];
         
     }
     else if([cell.textLabel.text isEqualToString:@"隐私政策"])
@@ -243,7 +251,8 @@
 {
     //评分 无法使用
     //NSString *str = [NSString stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",ID];
-    NSString *str = [NSString stringWithFormat: @"https://itunes.apple.com/cn/app/gui-lin-li-gong-da-xue-yun/id%@?mt=8&action=write-review", ID];
+    // &action=write-review
+    NSString *str = [NSString stringWithFormat: @"https://itunes.apple.com/cn/app/gui-lin-li-gong-da-xue-yun/id%@?mt=8", ID];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
     
 }
@@ -270,6 +279,13 @@
 #pragma mark - 意见反馈
 -(void)sendFeedback
 {
+    if (![MFMailComposeViewController canSendMail]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"当前设备不支持发送邮件~" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
 
     MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
     
@@ -285,7 +301,7 @@
     
     
     // 设置收件人列表
-    [mail setToRecipients:@[@"iHTCteam@gmail.com"]];
+    [mail setToRecipients:@[@"iHTCdevelop@gmail.com"]];
     
     
     //        // 设置抄送人列表

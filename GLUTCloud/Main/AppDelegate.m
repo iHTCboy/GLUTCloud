@@ -103,6 +103,25 @@
     
 }
 
+- (void)setupUI {
+    
+    UINavigationBar *appearance = [UINavigationBar appearance];
+    appearance.tintColor = UIColor.whiteColor;
+    appearance.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.whiteColor};
+    appearance.barTintColor = [appMainColor colorWithAlphaComponent:0.9];
+    
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance * navBarAppearance = [UINavigationBarAppearance new];
+        [navBarAppearance configureWithOpaqueBackground];
+        navBarAppearance.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.whiteColor};
+        navBarAppearance.largeTitleTextAttributes = @{NSForegroundColorAttributeName: UIColor.whiteColor};
+        navBarAppearance.backgroundColor = [appMainColor colorWithAlphaComponent:0.9];
+        appearance.standardAppearance = navBarAppearance;
+        appearance.scrollEdgeAppearance = navBarAppearance;
+    }
+    
+    [UIApplication.sharedApplication setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -113,6 +132,7 @@
     application.statusBarHidden = NO;
     application.statusBarStyle = UIStatusBarStyleLightContent;
     
+    [self setupUI];
     [self configureAPIKey];
     [self configIFlySpeech];
     //百度统计

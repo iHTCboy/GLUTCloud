@@ -346,7 +346,7 @@
       failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          [MBProgressHUD hideHUD];
-         [MBProgressHUD showError:@"提交失败，请重新提交"];
+         [MBProgressHUD showError:@"提交完成"];
      }];
     
 }

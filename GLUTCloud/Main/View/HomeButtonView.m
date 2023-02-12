@@ -11,7 +11,10 @@
 
 #define margin 0
 #define navBarHight (iPhone_X_S ? 87 : 63)
-#define iPhone_X_S ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone && ([UIScreen mainScreen].bounds.size.height == 812.0 || [UIScreen mainScreen].bounds.size.height == 896.0))
+#define  MACRO_IS_GREATER_OR_EQUAL_TO_IOS(v) ([[[UIDevice currentDevice] systemVersion] floatValue] >= v)
+#define iPhone_X_S (MACRO_IS_GREATER_OR_EQUAL_TO_IOS(11.0) ? \
+    ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) ? NO :\
+    (!UIEdgeInsetsEqualToEdgeInsets([[[UIApplication sharedApplication].keyWindow valueForKey:@"safeAreaInsets"] UIEdgeInsetsValue], UIEdgeInsetsZero)) : NO)
 
 @implementation HomeButtonView
 
@@ -52,6 +55,9 @@
     CGFloat butoonW = (width - 4 * margin) /3;
     CGFloat butoonH = butoonW + margin;
     int totalColumns = 3;
+    if (width > height) {
+        butoonH = ( height / (1.0 * self.subviews.count)) * totalColumns;
+    }
     
     int count = (int)self.subviews.count;
     for (int i = 0; i<count; i++) {

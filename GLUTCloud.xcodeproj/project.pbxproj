@@ -58,6 +58,12 @@
 		22D75A8B1A5B67CB006CDA2F /* AbutGLUTCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D75A8A1A5B67CB006CDA2F /* AbutGLUTCloudViewController.m */; };
 		22D75A8F1A5B6E5C006CDA2F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D75A8E1A5B6E5C006CDA2F /* MessageUI.framework */; };
 		22D75A921A5B71C1006CDA2F /* TCAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D75A911A5B71C1006CDA2F /* TCAppViewController.m */; };
+		6D16FA99298E29EB007339B7 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D16FA94298E29EA007339B7 /* TableHeaderView.xib */; };
+		6D16FA9A298E29EB007339B7 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D16FA95298E29EA007339B7 /* TableHeaderView.swift */; };
+		6D16FA9B298E29EB007339B7 /* IAppleServiceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D16FA96298E29EA007339B7 /* IAppleServiceUtil.swift */; };
+		6D16FA9C298E29EB007339B7 /* ITAdvancelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D16FA97298E29EB007339B7 /* ITAdvancelDetailViewController.swift */; };
+		6D16FA9D298E29EB007339B7 /* TCAppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D16FA98298E29EB007339B7 /* TCAppConst.swift */; };
+		6D16FA9F298E2B92007339B7 /* iHTCboyApp.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D16FA9E298E2B92007339B7 /* iHTCboyApp.json */; };
 		6D1B70611A5970F6002CC37D /* MapTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B70601A5970F6002CC37D /* MapTypeViewController.m */; };
 		6D20F94F217AEF67004A4ED1 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D20F94E217AEF67004A4ED1 /* Utility.m */; };
 		6D2C10662158F5F900C37783 /* AMapNaviKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2C0FF52158F5F900C37783 /* AMapNaviKit.framework */; };
@@ -216,7 +222,7 @@
 		1855B0BE1A5275CC00F68934 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		1855B1191A52A38E00F68934 /* AllMapCloudViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllMapCloudViewController.h; sourceTree = "<group>"; };
 		1855B11A1A52A38E00F68934 /* AllMapCloudViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllMapCloudViewController.m; sourceTree = "<group>"; };
-		188D52201A5105B800925F03 /* 桂林理工云图.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "桂林理工云图.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		188D52201A5105B800925F03 /* GLUTCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLUTCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188D52241A5105B800925F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188D52251A5105B800925F03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		188D523E1A5105B800925F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -290,6 +296,13 @@
 		22D75A8E1A5B6E5C006CDA2F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		22D75A901A5B71C1006CDA2F /* TCAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAppViewController.h; sourceTree = "<group>"; };
 		22D75A911A5B71C1006CDA2F /* TCAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAppViewController.m; sourceTree = "<group>"; };
+		6D16FA93298E29E8007339B7 /* GLUTCloud-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLUTCloud-Bridging-Header.h"; sourceTree = "<group>"; };
+		6D16FA94298E29EA007339B7 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
+		6D16FA95298E29EA007339B7 /* TableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
+		6D16FA96298E29EA007339B7 /* IAppleServiceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAppleServiceUtil.swift; sourceTree = "<group>"; };
+		6D16FA97298E29EB007339B7 /* ITAdvancelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITAdvancelDetailViewController.swift; sourceTree = "<group>"; };
+		6D16FA98298E29EB007339B7 /* TCAppConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCAppConst.swift; sourceTree = "<group>"; };
+		6D16FA9E298E2B92007339B7 /* iHTCboyApp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iHTCboyApp.json; sourceTree = "<group>"; };
 		6D1B705F1A5970F6002CC37D /* MapTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTypeViewController.h; sourceTree = "<group>"; };
 		6D1B70601A5970F6002CC37D /* MapTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTypeViewController.m; sourceTree = "<group>"; };
 		6D20F94D217AEF67004A4ED1 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
@@ -597,7 +610,7 @@
 		188D52211A5105B800925F03 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				188D52201A5105B800925F03 /* 桂林理工云图.app */,
+				188D52201A5105B800925F03 /* GLUTCloud.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -654,6 +667,19 @@
 				188D523E1A5105B800925F03 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D16FA92298E29D9007339B7 /* DeveloperApps */ = {
+			isa = PBXGroup;
+			children = (
+				6D16FA9E298E2B92007339B7 /* iHTCboyApp.json */,
+				6D16FA96298E29EA007339B7 /* IAppleServiceUtil.swift */,
+				6D16FA97298E29EB007339B7 /* ITAdvancelDetailViewController.swift */,
+				6D16FA95298E29EA007339B7 /* TableHeaderView.swift */,
+				6D16FA94298E29EA007339B7 /* TableHeaderView.xib */,
+				6D16FA98298E29EB007339B7 /* TCAppConst.swift */,
+			);
+			path = DeveloperApps;
 			sourceTree = "<group>";
 		};
 		6D2C0FF22158F5F900C37783 /* ThirdSDK */ = {
@@ -923,6 +949,7 @@
 				22D75A8A1A5B67CB006CDA2F /* AbutGLUTCloudViewController.m */,
 				22D75A901A5B71C1006CDA2F /* TCAppViewController.h */,
 				22D75A911A5B71C1006CDA2F /* TCAppViewController.m */,
+				6D16FA92298E29D9007339B7 /* DeveloperApps */,
 			);
 			path = "9.设置";
 			sourceTree = "<group>";
@@ -1004,6 +1031,7 @@
 		6D9BFEE02159374A00A0BABF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				6D16FA93298E29E8007339B7 /* GLUTCloud-Bridging-Header.h */,
 				6D9BFF1E21593D2E00A0BABF /* AppDelegate.h */,
 				6D9BFF0F21593D2E00A0BABF /* AppDelegate.m */,
 				6D9BFF1021593D2E00A0BABF /* HomeViewController.h */,
@@ -1240,7 +1268,7 @@
 			);
 			name = GLUTCloud;
 			productName = GLUTCloud;
-			productReference = 188D52201A5105B800925F03 /* 桂林理工云图.app */;
+			productReference = 188D52201A5105B800925F03 /* GLUTCloud.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1255,6 +1283,7 @@
 					188D521F1A5105B800925F03 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 28PV6G96R7;
+						LastSwiftMigration = 1420;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1307,6 +1336,7 @@
 				6D2C10D72158F60C00C37783 /* navigationMap@2x.png in Resources */,
 				6D2C119E2158F7D300C37783 /* timeline_image_loading@2x.png in Resources */,
 				6D2C11882158F7D300C37783 /* MJPhotoBrowser.bundle in Resources */,
+				6D16FA99298E29EB007339B7 /* TableHeaderView.xib in Resources */,
 				6D2C10E32158F60C00C37783 /* newpoi_normal@2x.png in Resources */,
 				6D2C10DA2158F60C00C37783 /* default_main_gpsnormalbutton_image_normal@3x.png in Resources */,
 				6D2C10F12158F60C00C37783 /* cloudPoint.png in Resources */,
@@ -1315,6 +1345,7 @@
 				6D2C10EA2158F60C00C37783 /* myLocation@2x.png in Resources */,
 				6D2C10D92158F60C00C37783 /* checkbtn_selected@3x.png in Resources */,
 				6D2C10E42158F60C00C37783 /* seting@2x.png in Resources */,
+				6D16FA9F298E2B92007339B7 /* iHTCboyApp.json in Resources */,
 				6D2C10D42158F60C00C37783 /* glutCloud@3x.png in Resources */,
 				6D2C10F32158F60C00C37783 /* default_main_gpsnormalbutton_image_disabled@3x.png in Resources */,
 				6D2C10E02158F60C00C37783 /* roundSearch@3x.png in Resources */,
@@ -1350,6 +1381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D16FA9B298E29EB007339B7 /* IAppleServiceUtil.swift in Sources */,
 				225190481A5A206C0017F716 /* RoomInfoViewController.m in Sources */,
 				225190521A5A206C0017F716 /* TransitDetailViewController.m in Sources */,
 				6D2C11852158F7D300C37783 /* MJPhotoLoadingView.m in Sources */,
@@ -1399,9 +1431,11 @@
 				2251904D1A5A206C0017F716 /* RoadInterDetailViewController.m in Sources */,
 				225190441A5A206C0017F716 /* DiningDeepViewController.m in Sources */,
 				6DC03BC61A54F32B00700EB2 /* ReSelectLocationMapViewController.m in Sources */,
+				6D16FA9D298E29EB007339B7 /* TCAppConst.swift in Sources */,
 				6DC03BEE1A55875D00700EB2 /* UIView+Geometry.m in Sources */,
 				6D2C116D2158F7D300C37783 /* JSONKit.m in Sources */,
 				2251904F1A5A206C0017F716 /* SegmentDetailViewController.m in Sources */,
+				6D16FA9C298E29EB007339B7 /* ITAdvancelDetailViewController.swift in Sources */,
 				6D2C11702158F7D300C37783 /* AFURLConnectionOperation.m in Sources */,
 				6D2C118C2158F7D300C37783 /* SDWebImageManager+MJ.m in Sources */,
 				6D2C117F2158F7D300C37783 /* IQKeyboardManager.m in Sources */,
@@ -1425,6 +1459,7 @@
 				6D2C11802158F7D300C37783 /* NSArray+Sort.m in Sources */,
 				6D2C118D2158F7D300C37783 /* MJPhotoBrowser.m in Sources */,
 				6D1B70611A5970F6002CC37D /* MapTypeViewController.m in Sources */,
+				6D16FA9A298E29EB007339B7 /* TableHeaderView.swift in Sources */,
 				225190051A5A200A0017F716 /* CommonUtility.m in Sources */,
 				6D2C116E2158F7D300C37783 /* AFURLResponseSerialization.m in Sources */,
 				6D2C11872158F7D300C37783 /* MJPhotoView.m in Sources */,
@@ -1579,10 +1614,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020.05.10;
+				CURRENT_PROJECT_VERSION = 2023.02.12;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1591,6 +1627,8 @@
 					"$(PROJECT_DIR)/GLUTCloud/ThirdSDK/FrameWork",
 				);
 				INFOPLIST_FILE = GLUTCloud/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "桂林云图";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1599,12 +1637,15 @@
 					"$(PROJECT_DIR)/GLUTCloud/ThirdSDK/BaiduMTJ_iOS_App_V5.2.0",
 					"$(PROJECT_DIR)/GLUTCloud/ThirdSDK/BaiduMTJ_iOS_App_V5.2.2_18",
 				);
-				MARKETING_VERSION = 7.0.0;
+				MARKETING_VERSION = 8.1.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = glutcloud;
-				PRODUCT_NAME = "桂林理工云图";
+				PRODUCT_NAME = GLUTCloud;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "GLUTCloud/Main/GLUTCloud-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1613,10 +1654,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020.05.10;
+				CURRENT_PROJECT_VERSION = 2023.02.12;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1625,6 +1667,8 @@
 					"$(PROJECT_DIR)/GLUTCloud/ThirdSDK/FrameWork",
 				);
 				INFOPLIST_FILE = GLUTCloud/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "桂林云图";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1633,12 +1677,14 @@
 					"$(PROJECT_DIR)/GLUTCloud/ThirdSDK/BaiduMTJ_iOS_App_V5.2.0",
 					"$(PROJECT_DIR)/GLUTCloud/ThirdSDK/BaiduMTJ_iOS_App_V5.2.2_18",
 				);
-				MARKETING_VERSION = 7.0.0;
+				MARKETING_VERSION = 8.1.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = glutcloud;
-				PRODUCT_NAME = "桂林理工云图";
+				PRODUCT_NAME = GLUTCloud;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "GLUTCloud/Main/GLUTCloud-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

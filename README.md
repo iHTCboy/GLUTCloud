@@ -10,7 +10,7 @@ Cloud map of guilin university of technology -- cloud is on the way! Map navigat
 本应用主要是学习高德地图使用，云图使用。
 
 ### 下载地址
-[iOS App Store](https://itunes.apple.com/cn/app/gui-lin-li-gong-da-xue-yun/id954359041?mt=8 )
+- [iOS App Store](https://itunes.apple.com/cn/app/gui-lin-li-gong-da-xue-yun/id954359041?mt=8 )
 
 
 ###  项目说明
@@ -23,11 +23,9 @@ Cloud map of guilin university of technology -- cloud is on the way! Map navigat
 
 ### 预览
 
-![Screen Shot](/ScreenShot/GULT-0.jpg)
-![Screen Shot](/ScreenShot/GULT-1.jpg)
-![Screen Shot](/ScreenShot/GULT-2.jpg)
-![Screen Shot](/ScreenShot/GULT-3.jpg)
-![Screen Shot](/ScreenShot/GULT-4.jpg)
-![Screen Shot](/ScreenShot/GULT-5.jpg)
-![Screen Shot](/ScreenShot/GULT-6.jpg)
-![Screen Shot](/ScreenShot/GULT-7.jpg)
+| ![Screen Shot](/ScreenShot/GULT-0.jpg) | ![Screen Shot](/ScreenShot/GULT-1.jpg) |
+| ----- | ----- |
+| ![Screen Shot](/ScreenShot/GULT-2.jpg) | ![Screen Shot](/ScreenShot/GULT-3.jpg) |
+| ![Screen Shot](/ScreenShot/GULT-4.jpg) | ![Screen Shot](/ScreenShot/GULT-5.jpg) |
+| ![Screen Shot](/ScreenShot/GULT-6.jpg) | ![Screen Shot](/ScreenShot/GULT-7.jpg) |
+

@@ -68,7 +68,7 @@
     UILabel * htc = [[UILabel alloc]init];
     htc.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.92);
     htc.bounds = CGRectMake(0, 0, self.view.frame.size.width, 80);
-    htc.text = @"何天从 版权所有";
+    htc.text = @"iHTCboy All rights";
     htc.textAlignment = NSTextAlignmentCenter;
     htc.textColor = TCCoror(147, 147, 147);
     htc.font = [UIFont systemFontOfSize:12];
@@ -81,7 +81,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy"];
     NSString *yearString = [formatter stringFromDate:[NSDate date]];
-    rights.text = [NSString stringWithFormat:@"©2014-%@ @iHTCboy hetiancong All rights reserved", yearString];
+    rights.text = [NSString stringWithFormat:@"©2014-%@ GLUTCloud @iHTCboy All rights reserved", yearString];
     rights.textAlignment = NSTextAlignmentCenter;
     rights.textColor = TCCoror(147, 147, 147);
     rights.font = [UIFont systemFontOfSize:11];

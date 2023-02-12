@@ -28,7 +28,7 @@
 #import "InvertGeoViewController.h"
 
 
-#define TCCoror(a,b,c) [UIColor colorWithRed:(a/255.0) green:(b/255.0) blue:(c/255.0) alpha:1]
+
 
 @interface HomeViewController ()<MAMapViewDelegate,HomeButtonViewDelegate>
 
